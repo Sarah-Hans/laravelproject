@@ -1,10 +1,6 @@
 name: Laravel
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+on: [push, pull_request]
 
 jobs:
   laravel-tests:
@@ -21,10 +17,9 @@ jobs:
       DB_PASSWORD: userpassword
       DB_USERNAME: user
       DB_DATABASE: database
-
     services:
       postgres:
-        image: postgres:10.8
+        image: postgres:13
         env:
           POSTGRES_USER: user
           POSTGRES_PASSWORD: userpassword
