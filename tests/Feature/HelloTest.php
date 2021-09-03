@@ -17,6 +17,6 @@ class HelloTest extends TestCase
     {
         $response = $this->get('/test');
         $response->assertStatus(200);
-        $response->assertSee('Hello World', $escaped = true);
+        $response->assertSee('Hello World');
     }
 }
