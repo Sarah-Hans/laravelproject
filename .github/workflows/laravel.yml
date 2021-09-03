@@ -54,7 +54,7 @@ jobs:
         mkdir -p database
         touch database/database.sqlite
     - name: Test with phpunit
-        run: php artisan test
+        run: vendor/bin/phpunit --coverage-text
         env:
           DB_PORT: ${{ job.services.postgres.ports[5432] }}
           REDIS_PORT: ${{ job.services.redis.ports['6379'] }}
